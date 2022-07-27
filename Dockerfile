@@ -1,6 +1,6 @@
-FROM rust:1.53
+FROM rust:1.62
 WORKDIR /opt
-RUN git clone https://github.com/Zondax/filecoin-signing-tools
-RUN cd filecoin-signing-tools && cargo build --release --manifest-path service/Cargo.toml
+RUN git clone https://github.com/Zondax/filecoin-service
+RUN cd filecoin-service && cargo build --release
 
-ENTRYPOINT ["/opt/filecoin-signing-tools/target/release/filecoin-service"]
+ENTRYPOINT ["/opt/filecoin-service/target/release/filecoin-service"]
